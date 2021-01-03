@@ -15,7 +15,7 @@ function Weather() {
         let allCityData = []
         var lessCities = allCities.splice(0,60)
         for(let i = 0; i < lessCities.length; i++) {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${lessCities[i].city}&appid=${'fe54a9ca913e25fcd3bf8f63243f143b'}`)
+            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${lessCities[i].city}&appid=${process.env.REACT_APP_ID}`)
             const json = await response.json()
             if(!json.message) {
                 var celcius = getCelcius(json.main.temp)
@@ -36,7 +36,7 @@ function Weather() {
                 <Grid container spacing={4} >
                     { loading ? (
                         <div className="weather-progress-container">
-                            <CircularProgress size="4em" color="black"  />
+                            <CircularProgress size="4em"  />
                         </div>
                     ) :  (
                         citiesCopy.map((city) => (
