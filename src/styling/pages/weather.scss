@@ -1,0 +1,25 @@
+.weather {
+    box-sizing: border-box;
+}
+
+.weather-title {
+    font-size: 40px;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+.weather-input {
+    width: 100%;
+}
+
+.weather-cards-container {
+    margin: 30px 0;
+}
+
+.weather-progress-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+}
