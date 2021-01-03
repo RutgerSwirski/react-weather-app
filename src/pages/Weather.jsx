@@ -15,7 +15,7 @@ function Weather() {
         let allCityData = []
         var lessCities = allCities.splice(0,60)
         for(let i = 0; i < lessCities.length; i++) {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${lessCities[i].city}&appid=${process.env.REACT_APP_ID}`)
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${lessCities[i].city}&appid=${process.env.REACT_APP_ID}`)
             const json = await response.json()
             if(!json.message) {
                 var celcius = getCelcius(json.main.temp)
